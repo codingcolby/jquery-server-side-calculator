@@ -25,6 +25,13 @@ app.post('/TBD', (req, res) => {
     res.send(TBD);
 });
 
+// TO DO
+// -- capture and store the input (or route to a module file)
+// -- create a function calcprocessing module using if/else to compute numbers using any of the following: + - * /
+// -- send a computation complete indicator
+// -- GET the calculated result
+
+
 
 //  TESTING //
 // ********** //

@@ -7,19 +7,14 @@ function init() {
     getTBD();
 }
 
-function getTBD() {
-$.ajax({
-    method: 'GET',
-    url: '/route',
-})
-.then((response) => {
-    render(response);
-})
-.catch((err) => {
-    console.log('err');
-    alert('There was an error finding route.');
-});
-}
+// TO DO
+// -- capture 2 input fields
+// -- capture operator selection
+// -- bundle as object
+// -- send object to server via POST
+// -- retrieve computational result via GET
+// -- display all  previous input/calculation results in a list via GET which updates with each new calculation
+
 
 // AJAX
 // **********
@@ -39,6 +34,20 @@ function postTBD(TBD) {
 });
 }
 
+function getTBD() {
+    $.ajax({
+        method: 'GET',
+        url: '/route',
+    })
+    .then((response) => {
+        render(response);
+    })
+    .catch((err) => {
+        console.log('err');
+        alert('There was an error finding route.');
+    });
+    }
+    
 
 // DOM RENDER
 // **********
