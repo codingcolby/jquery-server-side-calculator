@@ -9,7 +9,9 @@
     <title>jQuery Server-Side Calculator</title>
 </head>
 <body>
+    <header>    
     <h2>jQuery Server-Side Calculator</h2>
+</header>
 <!-- TO DO
 -- enhance 2 input elements
 -- enhance mathematical operator + - * / buttons
@@ -19,22 +21,29 @@
 -- display a list of all historical calculations that shows the most recent request and all historical requests with each new submit -->
 
 <!-- user action -->
-<input name="input1" placeholder="input1" type=number></input>
-<input name="input2" placeholder="input2" type=number></input>
+<div class="userActions">
+<input name="input1" placeholder="First Number" type=number></input>
 
-<button name="plus">+</button>
-<button name="minus">-</button>
-<button name="multiply">*</button>
-<button name="divide">/</button>
-<button name="Clear">Clear</button>
 
-<button class="js-submit" name="Submit">And the answer is...(click here)</button>
+<button class="operator" name="plus">+</button>
+<button class="operator" name="minus">-</button>
+<button class="operator" name="multiply">*</button>
+<button class="operator" name="divide">/</button>
 
-<!-- returned data -->
-<div class="answer">  <!-- current caluclation -->
-    <p>32</p>  <!-- sample data for css styling -->
+<input name="input2" placeholder="Second Number" type=number></input>
+<button class="js-clear" name="clear">Clear</button>
 </div>
 
+<div class="result">
+<button class="js-submit" name="Submit">And the answer is...</button>
+
+<!-- returned data -->
+<span class="answer">  <!-- current caluclation -->
+    32  <!-- sample data for css styling -->
+</span>
+</div>
+
+<!-- returned data -->
 <h2>All Calculations Done This Session</h2>
 <div class="displayCalcHistory"> <!-- GET will refresh and append data here as an unordered list with no bullets, in reverse chronological order -->
     <ul>  <!-- sample data for css styling-->

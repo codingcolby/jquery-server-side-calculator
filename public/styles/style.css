@@ -1,36 +1,87 @@
 body {
     background-color: seashell;
+/*     font-weight: bold; */
+    width: 50%;
+/*     padding: auto; */
+    text-align: center;
+}
+
+header h2 {
+    border: none;
+}
+
+.userActions {
+/*    padding: auto; */
+background-color: aquamarine
+
 }
 
 input {
-    font-size: xx-large;
-    font-weight: bold;
-    width: 120px;
-    height: 70px;
+    height: 30px;
+    width: 70px;
     background-color:rgb(200, 228, 200);
-    border: 2px solid black;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
 }
 
+input[type="number"] {}
 
 button {
-    font-size: xx-large;
-    font-weight: bold;
-    width: 70px;
-    height: 70px;
+    height: 30px;
+    width: 30px;
     background-color: slategray;
-    border: 2px solid black;
+    border-radius: 4px; 
+/*     padding: 5px; */
+    text-align: center;
+    font-size: 15px;
+}
+
+.js-clear {
+background-color: honeydew;
+height: 30px;
+width: 70px;
+font-size: 15px;
+font-weight: bold;
+text-align: center;
+display: block;
+margin: 4% 38%;
+
+}
+
+.result {
+    font-style: italic;
+    width:100%;
+    background-color:blueviolet
 }
 
 .js-submit {
-    width: 150px;
+    background-color: honeydew;
+    width: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 25px;
 }
 
-.displayCalcHistory {
-    font-size: 70px;
+.answer {
+    width: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 0 0 5px;
+}
+
+h2 {
+    border-bottom: 6px double black;
+}
+
+.displayCalcHistory {    
+    text-align: left;
+    font-size: large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
-}
-
-ul {
-    list-style-type: none;
+    padding 0 0 0 20px;
+    background-color:coral
 }
