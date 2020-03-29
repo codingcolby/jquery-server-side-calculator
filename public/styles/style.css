@@ -1,3 +1,36 @@
 body {
     background-color: seashell;
 }
+
+input {
+    font-size: xx-large;
+    font-weight: bold;
+    width: 120px;
+    height: 70px;
+    background-color:rgb(200, 228, 200);
+    border: 2px solid black;
+}
+
+
+button {
+    font-size: xx-large;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    background-color: slategray;
+    border: 2px solid black;
+}
+
+.js-submit {
+    width: 150px;
+}
+
+.displayCalcHistory {
+    font-size: 70px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+}

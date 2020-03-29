@@ -11,15 +11,42 @@
 <body>
     <h2>jQuery Server-Side Calculator</h2>
 <!-- TO DO
--- create 2 input elements
--- create choice of mathematical operator + - * /
--- create button to Submit
--- display current request result
--- create Clear button to empty input fields
--- display a list of all historical calculations that shows the most recent request and all historical requests with each new submit
+-- enhance 2 input elements
+-- enhance mathematical operator + - * / buttons
+-- encode string/data to pass for submit button
+-- encode display current request result
+-- encode Clear button to empty input fields
+-- display a list of all historical calculations that shows the most recent request and all historical requests with each new submit -->
 
--- STRETCH DETAILS TO COME
--->
+<!-- user action -->
+<input name="input1" placeholder="input1" type=number></input>
+<input name="input2" placeholder="input2" type=number></input>
+
+<button name="plus">+</button>
+<button name="minus">-</button>
+<button name="multiply">*</button>
+<button name="divide">/</button>
+<button name="Clear">Clear</button>
+
+<button class="js-submit" name="Submit">And the answer is...(click here)</button>
+
+<!-- returned data -->
+<div class="answer">  <!-- current caluclation -->
+    <p>32</p>  <!-- sample data for css styling -->
+</div>
+
+<h2>All Calculations Done This Session</h2>
+<div class="displayCalcHistory"> <!-- GET will refresh and append data here as an unordered list with no bullets, in reverse chronological order -->
+    <ul>  <!-- sample data for css styling-->
+        <li>Test data</li>
+        <li>Test data</li>
+        <li>Test data</li>
+        <li>Test data</li>
+
+    </ul>
+</div>
+
+<!--STRETCH DETAILS TO COME - if time permits -->
 
 
 </body>
