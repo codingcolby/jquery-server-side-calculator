@@ -1,11 +1,12 @@
 $(document).ready(init);
 
 function init() {
-    console.log("Hello Client");
-    $('.js-TBD').on('click', someFunction);
-
-    getTBD();
+    $('.js-submit').on('click', collectUserInput);
+    console.log(userInput);
+    postUserInput;
 }
+
+
 
 // TO DO
 // -- capture 2 input fields
@@ -15,16 +16,23 @@ function init() {
 // -- retrieve computational result via GET
 // -- display all  previous input/calculation results in a list via GET which updates with each new calculation
 
+function collectUserInput () {
+    let userInput = {
+input1: input1.valueI(),
+naturalLangOperator: naturalLangOperator.value(),
+input2: input2.value(),
+    };
+};
 
 
 
 // AJAX
 // **********
-function postTBD(TBD) {
+function postUserInput(userInput) {
     $.ajax({
         method: 'POST',
-        url: '/route',
-        data: TBD,
+        url: '/calcprocessing',
+        data: userInput.body,
     })
     .then((response) => {
     console.log(response);

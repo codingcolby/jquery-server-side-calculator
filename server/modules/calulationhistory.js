@@ -1,12 +1,4 @@
 module.exports = [
-{
-calcuse: '4 / 2 = 2',
-},
-
-
-
-
-
 
 
 ];

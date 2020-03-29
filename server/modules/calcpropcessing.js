@@ -1,4 +1,11 @@
+$(document).ready(init);
+
+function init() {
+
 console.log('Hello calcprocessing.js');
+};
+
+console.log("The answer is being calculated");
 
 
 
@@ -6,59 +13,71 @@ console.log('Hello calcprocessing.js');
 // create a callable function to process the given inputs with the selected naturalLangOperator
 
 const answer = [];
-const calcuse = [];
+const calcDone = {
+    input1: [],
+    naturalLangOperator: [],
+    input2: [],
+    result: [],
+    };
 const input1 = [];
 const naturalLangOperator = [];
 const input2 = [];
-
-const incomingParameters = [
+const newCalc=
     {
-    input1: 120,
-    naturalLangOperator: 'divide',
-    input2: 12,
-    },
-];
+    input1: input1.value(),
+    naturalLangOperator: naturalLangOperator.value(),
+    input2: input2.value(),
+    };
 
-function calcprocessing (${input1}, ${naturalLangOperator}, ${input2}) {
+function fullCalcProcess () {
+    newCalc.push(userInput);
+    calcprocessing (newCalc);
+}
+
+function calcprocessing () {
     answer.length = 0;
-    calcuse.length = 0;
+    calcDone.length = 0;
 
     if (naturalLangOperator == "plus") {
         let result = (Number(input1) + Number(input2));
         answer.push(result);
-        calcuse.push([input1 + " " + "+" + " " + input2 +" = " + result]);
-        return true;
+        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        return calcDone;
     }
     else if (naturalLangOperator == "minus") {
         let result = (input1 - input2);
         answer.push(result);
-        calcuse.push([input1 + " " + "-" + " " + input2 +" = " + result]);
-        return true;
+        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        return calcDone;
     }
     else if (naturalLangOperator == "multiply") {
         let result = (input1 * input2);
         answer.push(result);
-        calcuse.push([input1 + " " + "*" + " " + input2 +" = " + result]);
-        return true;
+        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        return calcDone;
 }
 else if (naturalLangOperator == "divide") {
         let result = (input1 / input2);
         answer.push(result);
-        calcuse.push([input1 + " " + "/" + " " + input2 +" = " + result]);
-        return true;
-}
+        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        return calcDone;
+}   
 else {
     console.log('A result could not be calculated');
 }
 }
 
+const express = require('express');
+const app = express();
+app.use(express.static('server/public'));
+
+
+
+// const calculationhistory = require('modules/calculationhistory.js');
 app.post('/calculationhistory', (req, res) => {
     console.log('req:', req);
-    const newCalc = req.body;
-    // {
-    //    calcuse: '',
-    // }
-    calculationhistory.push(newCalc);
+    calcDone = req.body;
+    calculationhistory.push(calcDone);
     res.sendStatus(201);
 });
 
