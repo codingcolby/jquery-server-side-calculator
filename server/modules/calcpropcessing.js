@@ -1,13 +1,25 @@
 console.log('Hello calcprocessing.js');
 
+
+
 // TO DO
 // create a callable function to process the given inputs with the selected naturalLangOperator
 
-
 const answer = [];
 const calcuse = [];
+const input1 = [];
+const naturalLangOperator = [];
+const input2 = [];
 
-function calcprocessing (input1, naturalLangOperator, input2) {
+const incomingParameters = [
+    {
+    input1: 120,
+    naturalLangOperator: 'divide',
+    input2: 12,
+    },
+];
+
+function calcprocessing (${input1}, ${naturalLangOperator}, ${input2}) {
     answer.length = 0;
     calcuse.length = 0;
 
@@ -20,25 +32,36 @@ function calcprocessing (input1, naturalLangOperator, input2) {
     else if (naturalLangOperator == "minus") {
         let result = (input1 - input2);
         answer.push(result);
-        calcuse.push([input1 + " " + "+" + " " + input2 +" = " + result]);
+        calcuse.push([input1 + " " + "-" + " " + input2 +" = " + result]);
         return true;
     }
     else if (naturalLangOperator == "multiply") {
         let result = (input1 * input2);
         answer.push(result);
-        calcuse.push([input1 + " " + "+" + " " + input2 +" = " + result]);
+        calcuse.push([input1 + " " + "*" + " " + input2 +" = " + result]);
         return true;
 }
 else if (naturalLangOperator == "divide") {
         let result = (input1 / input2);
         answer.push(result);
-        calcuse.push([input1 + " " + "+" + " " + input2 +" = " + result]);
+        calcuse.push([input1 + " " + "/" + " " + input2 +" = " + result]);
         return true;
 }
 else {
     console.log('A result could not be calculated');
 }
 }
+
+app.post('/calculationhistory', (req, res) => {
+    console.log('req:', req);
+    const newCalc = req.body;
+    // {
+    //    calcuse: '',
+    // }
+    calculationhistory.push(newCalc);
+    res.sendStatus(201);
+});
+
 
 // TESTS
 // calcprocessing(6, 'plus', 2);

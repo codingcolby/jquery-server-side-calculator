@@ -16,6 +16,8 @@ function init() {
 // -- display all  previous input/calculation results in a list via GET which updates with each new calculation
 
 
+
+
 // AJAX
 // **********
 function postTBD(TBD) {
@@ -34,10 +36,10 @@ function postTBD(TBD) {
 });
 }
 
-function getTBD() {
+function getTBD(TBD) {
     $.ajax({
         method: 'GET',
-        url: '/route',
+        url: '/',
     })
     .then((response) => {
         render(response);
@@ -47,7 +49,7 @@ function getTBD() {
         alert('There was an error finding route.');
     });
     }
-    
+
 
 // DOM RENDER
 // **********
