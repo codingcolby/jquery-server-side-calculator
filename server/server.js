@@ -4,7 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const calculationhistory = require('modules/calculationhistory.js');
-const calcprocessing = require('modules/calprocessing.js');
+const calcprocessing = require('modules/calcprocessing.js');
 
 //  EXPRESS //
 // ********** //
@@ -28,7 +28,6 @@ app.get('/calculationhistory', (req, res) => {
     res.send(calculationhistory);
 });
 
-const calcprocessing = require('modules/calprocessing.js');
 app.post('/calcprocessing', (req, res) => {
     const userInput = req.body;
     newCalc.push(userInput);
