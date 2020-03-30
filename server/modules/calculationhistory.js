@@ -17,5 +17,5 @@ module.exports = [
     input2: 3,
     result: 18,
     displayOnlyString: `6 * 3 = 18`,
-}
+},
 ];
