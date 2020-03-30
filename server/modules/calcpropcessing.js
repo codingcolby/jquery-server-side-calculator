@@ -11,17 +11,21 @@ console.log("The answer is being calculated");
 
 // TO DO
 // create a callable function to process the given inputs with the selected naturalLangOperator
-
-const answer = [];
-const calcDone = {
-    input1: [],
-    naturalLangOperator: [],
-    input2: [],
-    result: [],
-    };
 const input1 = [];
 const naturalLangOperator = [];
 const input2 = [];
+const answer = [];
+
+const calcDone = {
+    input1: '',
+    naturalLangOperator: '',
+    operatorSymbol: '',
+    input2: '',
+    result: '',
+    displayOnlyString: '',
+    };
+
+
 const newCalc=
     {
     input1: input1.value(),
@@ -41,7 +45,15 @@ function calcprocessing () {
     if (naturalLangOperator == "plus") {
         let result = (Number(input1) + Number(input2));
         answer.push(result);
-        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        calcDone.push(
+            {
+            input1: $('input1'),
+            naturalLangOperator: $('naturalLangOperator'),
+            operatorSymbol: '+',
+            input2: $('input2'),
+            result: $('result'),
+            displayOnlyString: {input1 + " " + "/" + " " + input2 +" = " + result]);
+            };
         return calcDone;
     }
     else if (naturalLangOperator == "minus") {

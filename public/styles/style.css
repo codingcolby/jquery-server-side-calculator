@@ -1,8 +1,6 @@
 body {
     background-color: seashell;
-/*     font-weight: bold; */
     width: 50%;
-/*     padding: auto; */
     text-align: center;
 }
 
@@ -11,31 +9,26 @@ header h2 {
 }
 
 .userActions {
-/*    padding: auto; */
 background-color: aquamarine
-
 }
 
 input {
     height: 30px;
-    width: 70px;
+    width: 90px;
     background-color:rgb(200, 228, 200);
-    font-size: 10px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     padding: 5px;
 }
 
-input[type="number"] {}
-
-button {
+.operator {
     height: 30px;
     width: 30px;
     background-color: slategray;
     border-radius: 4px; 
-/*     padding: 5px; */
-    text-align: center;
-    font-size: 15px;
+    padding: 3px; 
+    font: 20px bold;
 }
 
 .js-clear {
@@ -43,33 +36,35 @@ background-color: honeydew;
 height: 30px;
 width: 70px;
 font-size: 15px;
-font-weight: bold;
 text-align: center;
+font-weight: bold;
 display: block;
 margin: 4% 38%;
-
 }
 
 .result {
     font-style: italic;
     width:100%;
-    background-color:blueviolet
+    height: 25px;
+    background-color:blueviolet;
+    display: inline-block;
+    margin: 2% 0;
+    padding: 4% 0;
 }
 
-.js-submit {
+.result button {
     background-color: honeydew;
     width: 250px;
     font-size: 15px;
     font-weight: bold;
-    display: inline-block;
     margin-right: 25px;
+    border-radius: 5px;
 }
 
-.answer {
+.result span {
     width: 20px;
     font-size: 28px;
     font-weight: bold;
-    display: inline-block;
     margin: 0 0 0 5px;
 }
 
@@ -84,4 +79,8 @@ h2 {
     font-weight: bold;
     padding 0 0 0 20px;
     background-color:coral
+}
+
+ul {
+    list-style-type: none;
 }

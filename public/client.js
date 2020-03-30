@@ -1,11 +1,12 @@
 $(document).ready(init);
 
 function init() {
-    $('.js-submit').on('click', collectUserInput);
+    $('.js-submit').on('click', collectUserInput );
+    $('.userActions').append (`
+    <button class="js-clear" name="clear">Clear</button>`)
     console.log(userInput);
     postUserInput;
 }
-
 
 
 // TO DO
@@ -17,10 +18,11 @@ function init() {
 // -- display all  previous input/calculation results in a list via GET which updates with each new calculation
 
 function collectUserInput () {
-    let userInput = {
-input1: input1.valueI(),
-naturalLangOperator: naturalLangOperator.value(),
-input2: input2.value(),
+    event.preventDefault();
+    const userInput = {
+        input1: $('input1').val(),
+        naturalLangOperator: $('naturalLangOperator').name.val(),
+        input2: $('input2').val(),
     };
 };
 
@@ -61,15 +63,22 @@ function getTBD(TBD) {
 
 // DOM RENDER
 // **********
-function render(TBD) {
-    console.log('Render in browser');
-    $('.js-TBD').empty();
+function render(calculationhistory) {
+    console.log('Calculations for this server session');
+    $('.displayCalcHistory').empty();
 
-    for (let i = 0; i < someArray.length; i++) {
-    const someThing = someArray[i];
+    for (let i = 0; i < calculationhistory.length; i++) {
+    const pastCalculation = calculationhistory[i];
 
-    $('.js-').append(`
-        <p><strong>${someThing.name}:</strong> ${someThing.description}</p>
+    $('.displayCalcHistory').append(`
+
+    <li>
+    
+    <li>
+
+
+  
+
     `);
     }
 }
