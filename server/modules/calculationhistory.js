@@ -1,9 +1,8 @@
 // TO DO
 // -- make sure this stores all history; NOTE: it will clear when/if restarting the Server
-
+// sample data
 module.exports = [
 
-// sample data
 {
     input1: 12,
     naturalLangOperator: 'divided',
