@@ -17,20 +17,13 @@ Last updated 2020-03-29
 
 
 ## Built With
-HTML/CSS
-NODE
-jQuery
-JavaScript
-Express
-Postico
-Body-Parser
-And supporting tools: Visual Studio Code, GitHub
+HTML/CSS  |  NODE  |  jQuery  |  JavaScript  |  Express  |  Postico  |  Body-Parser  |  And supporting tools: Visual Studio Code, GitHub
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Acknowledgement
-Thanks to the AMAZING team at [Prime Digital Academy](www.primeacademy.io) Kansas City as they teach and guide me through this project and the  process of becoming a full stack engineer. Extra props for their phenomenal effort and support to maintain this program, with excellence, during the 2020 Coronavirus Pandemic.
+Thanks to the AMAZING team at [Prime Digital Academy](https://primeacademy.io/) Kansas City as they teach and guide me through this project and the  process of becoming a full stack engineer. Extra props for their phenomenal effort and support in maintaining this program, with excellence, during the 2020 Coronavirus Pandemic.
 
 ## Support
 If you have suggestions or issues, please email me at [learn2code@respectdesfonds.com]
