@@ -1,15 +1,16 @@
 // LOTS OF "HALF FINISHED CODE"   REDUCE ALL THE CODE !
 
-// REQUIRE
-const express = require('express');
-const bodyParser = require('body-parser');
-const calculationhistory = require('modules/calculationhistory.js');
-const calcprocessing = require('modules/calcprocessing.js');
+console.log("Hello server");
 
 //  EXPRESS //
 // ********** //
+
+
+// REQUIRE
+const express = require('express');
 const app = express();
-app.use(express.static('server/public'));
+app.use(express.static('/jquery-server-side-calculator-master'));
+const bodyParser = require('body-parser');
 
 //  PORT  //
 // ********** //
@@ -24,11 +25,11 @@ app.use(bodyParser.json());
 // ROUTES  //
 // ********** //
 
-app.get('/calculationhistory', (req, res) => {
+app.get('calculationhistory', (req, res) => {
     res.send(calculationhistory);
 });
 
-app.post('/calcprocessing', (req, res) => {
+app.post('calcprocessing', (req, res) => {
     const userInput = req.body;
     newCalc.push(userInput);
     res.sendStatus(201);

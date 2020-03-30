@@ -1,8 +1,7 @@
 // TO DO
 // -- make sure this stores all history; NOTE: it will clear when/if restarting the Server
 // sample data
-module.exports = [
-
+const calculationhistory = [
 {
     input1: 12,
     naturalLangOperator: 'divided',
@@ -19,3 +18,5 @@ module.exports = [
     displayOnlyString: `6 * 3 = 18`,
 },
 ];
+
+module.exports = calculationhistory;

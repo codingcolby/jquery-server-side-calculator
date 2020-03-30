@@ -1,7 +1,11 @@
 // LOTS OF "HALF FINISHED CODE"   REDUCE ALL THE CODE !
 
-$(document).ready(submit); {
+$(document).ready(init);
+
+function init() {
+    $('.js-submit').on('click', submit);
     console.log('Time to number crunch!');
+    getcalculationhistory();
 }
 
 // FIX, ALSO INPUT FIELDS SHOULD NOT CLEAR ON SUBMIT BUT THEY ARE
@@ -55,7 +59,7 @@ function postUserInput(userInput) {
 });
 }
 
-function getHistory(calculationhistory) {
+function getcalculationhistory() {
     $.ajax({
         method: 'GET',
         url: '/server/modules/calculationhistory',
