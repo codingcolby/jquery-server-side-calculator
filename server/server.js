@@ -1,25 +1,28 @@
 // LOTS OF "HALF FINISHED CODE"   REDUCE ALL THE CODE !
 
-console.log("Hello Server");
+// REQUIRE
+const express = require('express');
+const bodyParser = require('body-parser');
+const calculationhistory = require('server/modules/calculationhistory.js');
+
+//  EXPRESS //
+// ********** //
+const app = express();
+app.use(express.static('server/public'));
 
 //  PORT  //
 // ********** //
 const PORT = 5000;
 
-//  EXPRESS //
-// ********** //
-const express = require('express');
-const app = express();
-app.use(express.static('server/public'));
-
 //  BODY PARSER  //
 // ********** //
-const bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
 
 //  SERVER ROUTES  //
 // ********** //
-const calculationhistory = require('modules/calculationhistory.js');
+
 app.get('/calculationhistory', (req, res) => {
     res.send(calculationhistory);
 });
