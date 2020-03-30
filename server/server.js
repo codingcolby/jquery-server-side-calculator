@@ -3,7 +3,8 @@
 // REQUIRE
 const express = require('express');
 const bodyParser = require('body-parser');
-const calculationhistory = require('server/modules/calculationhistory.js');
+const calculationhistory = require('modules/calculationhistory.js');
+const calcprocessing = require('modules/calprocessing.js');
 
 //  EXPRESS //
 // ********** //
