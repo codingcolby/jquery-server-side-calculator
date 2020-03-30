@@ -1,13 +1,35 @@
-// REDUCE ALL THE CODE !
+// LOTS OF "HALF FINISHED CODE"   REDUCE ALL THE CODE !
 
 $(document).ready(init);
 
 function init() {
-    console.log("The answer is being calculated"); // this should be the response to the POST - research syntax and AJAX
+    console.log("The answer is being calculated"); // ?? should this be the response to the POST - research syntax and AJAX
+    fullCalcProcess();
 };
 
+function fullCalcProcess () {
+    newCalc.push(userInput);
+    calcprocessing(newCalc);
+
+// ADDED THIS BECAUSE OF ERROR
+const express = require('express');
+const app = express();
+app.use(express.static('server/public'));
+
+const calculationhistory = require('modules/calculationhistory.js');
+
+// REVIEW AND FIX
+app.post('/calculationhistory', (req, res) => {
+    console.log('req:', req);
+    calcDone = req.body;
+    calculationhistory.push(calcDone);
+    res.sendStatus(201);
+});
+}
+
 // TO DO
-// create a callable function to process the given inputs with the selected naturalLangOperator due to operator symbol throwing errors during submit tests
+// create a callable function to process the given inputs; substitute the naturalLangOperator due to selected operator symbol throwing errors
+
 // not all these const may be needed - remove after testing if not
 const input1 = [];
 const naturalLangOperator = [];
@@ -25,16 +47,12 @@ const calcDone = {
 
 const newCalc=
     {
-    input1: input1.value(),
-    naturalLangOperator: naturalLangOperator.value(),
-    input2: input2.value(),
+    input1: $(input1).val(),
+    naturalLangOperator: $(naturalLangOperator).val(),
+    input2: $(input2).val(),
     };
 
-function fullCalcProcess () {
-    newCalc.push(userInput);
-    calcprocessing (newCalc);
-}
-
+// CHECK SYNTAX
 function calcprocessing () {
     answer.length = 0;
     calcDone.length = 0;
@@ -44,11 +62,11 @@ function calcprocessing () {
         answer.push(result);
         calcDone.push(
             {
-            input1: $('input1'),
-            naturalLangOperator: $('naturalLangOperator'),
+            input1: $(input1),
+            naturalLangOperator: $(naturalLangOperator),
             operatorSymbol: '+',
-            input2: $('input2'),
-            result: $('result'),
+            input2: $(input2),
+            result: $(result),
             displayOnlyString: (`$(input1) + $(input2) = $(result)`),
             });
         return calcDone;
@@ -57,19 +75,43 @@ function calcprocessing () {
     else if (naturalLangOperator == "minus") {
         let result = (input1 - input2);
         answer.push(result);
-        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        calcDone.push(
+            {
+            input1: $(input1),
+            naturalLangOperator: $(naturalLangOperator),
+            operatorSymbol: '-',
+            input2: $(input2),
+            result: $(result),
+            displayOnlyString: (`$(input1) - $(input2) = $(result)`),
+            });
         return calcDone;
     }
     else if (naturalLangOperator == "multiply") {
         let result = (input1 * input2);
         answer.push(result);
-        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        calcDone.push(
+            {
+            input1: $(input1),
+            naturalLangOperator: $(naturalLangOperator),
+            operatorSymbol: '*',
+            input2: $(input2),
+            result: $(result),
+            displayOnlyString: (`$(input1) * $(input2) = $(result)`),
+            });
         return calcDone;
 }
 else if (naturalLangOperator == "divide") {
         let result = (input1 / input2);
         answer.push(result);
-        calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
+        calcDone.push(
+            {
+            input1: $(input1),
+            naturalLangOperator: $(naturalLangOperator),
+            operatorSymbol: '/',
+            input2: $(input2),
+            result: $(result),
+            displayOnlyString: (`$(input1) / $(input2) = $(result)`),
+            });
         return calcDone;
 }
 else {
@@ -77,22 +119,10 @@ else {
 }
 }
 
-const express = require('express');
-const app = express();
-app.use(express.static('server/public'));
 
 
 
-// const calculationhistory = require('modules/calculationhistory.js');
-app.post('/calculationhistory', (req, res) => {
-    console.log('req:', req);
-    calcDone = req.body;
-    calculationhistory.push(calcDone);
-    res.sendStatus(201);
-});
-
-
-// TESTS
+// TESTS - FYI: may not work any longer as some items have been changed
 // calcprocessing(6, 'plus', 2);
 // console.log(`Addition Test Answer: ${answer}`); // should be "Answer: 8"
 // console.log("Addition Operator Test: " + calcDone + " = " + `${answer}`); // should be "6 + 2 = 8"

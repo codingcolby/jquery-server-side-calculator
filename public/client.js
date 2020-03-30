@@ -1,40 +1,42 @@
-// REDUCE ALL THE CODE !
+// LOTS OF "HALF FINISHED CODE"   REDUCE ALL THE CODE !
 
-$(document).ready(init);
-
-function init() {
-    $('.js-submit').on('click', collectUserInput);
-    // intention: clear button won't appear until after the first instance of the submit button being clicked
-    // $('.userActions').append (`<button class="js-clear" name="clear">Clear</button>`)
-    console.log(userInput);
-    postUserInput;
+$(document).ready(submit); {
+    console.log('Time to number crunch!');
 }
 
+// FIX, ALSO INPUT FIELDS SHOULD NOT CLEAR ON SUBMIT BUT THEY ARE
+function submit() {
+    $('.js-submit').on('click', collectUserInput);
+    event.preventDefault();
+    console.log(userInput);
+    postUserInput;
+    $('.result').append(`
+    <p> Result: ${calcprocessing.answer}
+    </p>
+    `);
+    getHistory();
+    render();
+}
 
-// TO DO
-// -- capture 2 input fields
-// -- capture operator selection ?use buttons and pass the button name?
-// -- send object to server via POST...server logic/communications not ready for this yet
-// -- retrieve computational result via GET...server logic/communications not ready for this yet
-// -- display all previous input/calculation results in a list via GET which updates with each new calculation
-
+// THIS IS WORKING
 $('.js-clear').on('click', clearInput);
-
 function clearInput() {
-    $('.usernumber').val('');
+    $('.input1').val('');
+    $('.input2').val('');
 };
 
+// CHECK SYNTAX
 function collectUserInput () {
     event.preventDefault();
     const userInput = {
-        input1: $('input1').val(),
-        naturalLangOperator: $('naturalLangOperator').name.val(),
-        input2: $('input2').val(),
+        input1: $(input1).val(),
+// CAN THE NAME BE PASSED? THE OPERATOR - EVEN IN QUOTES GIVES AND ERROR. CAN INFORMATION BE PASSED BASED ON A BUTTON TOGGLE?
+        naturalLangOperator: $(naturalLangOperator.name).val(),
+        input2: $(input2).val(),
     };
 };
 
-
-
+// FIX THIS - NEED MORE REVIEW ON TOPIC
 // AJAX
 // **********
 function postUserInput(userInput) {
@@ -45,7 +47,7 @@ function postUserInput(userInput) {
     })
     .then((response) => {
     console.log(response);
-    getTBD();
+    get($(answer));
     })
     .catch((err) => {
     console.log('err');
@@ -53,10 +55,10 @@ function postUserInput(userInput) {
 });
 }
 
-function getTBD(TBD) {
+function getHistory(calculationhistory) {
     $.ajax({
         method: 'GET',
-        url: '/',
+        url: '/server/modules/calculationhistory',
     })
     .then((response) => {
         render(response);
@@ -75,17 +77,19 @@ function render(calculationhistory) {
     $('.displayCalcHistory').empty();
 
     for (let i = 0; i < calculationhistory.length; i++) {
-    const pastCalculation = calculationhistory[i];
+    const pastCalculations = calculationhistory[i];
 
     $('.displayCalcHistory').append(`
-
     <li>
-    
-    <li>
-
-
-  
-
+    ${pastCalculations.displayOnlyString}
+    </li>
     `);
     }
 }
+
+// TO DO - LEFTOVER NOTES
+// -- capture 2 input fields
+// -- capture operator selection ?use buttons and pass the button name?
+// -- send object to server via POST...server logic/communications not ready for this yet
+// -- retrieve computational result via GET...server logic/communications not ready for this yet
+// -- display all previous input/calculation results in a list via GET which updates with each new calculation

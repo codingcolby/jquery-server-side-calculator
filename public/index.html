@@ -9,9 +9,41 @@
     <title>jQuery Server-Side Calculator</title>
 </head>
 <body>
-    <header>    
+    <header>
     <h2>jQuery Server-Side Calculator</h2>
 </header>
+
+<!-- user action -->
+<form class="userActions">
+    <input class="input1" name="input1" placeholder="1st Num" type=number></input>
+    <button class="operator" name="plus">+</button>
+    <button class="operator" name="minus">-</button>
+    <button class="operator" name="multiply">*</button>
+    <button class="operator" name="divide">/</button>
+    <input class="input2" name="input2" placeholder="2nd Num" type=number></input>
+    <button class="js-submit operator" name="Submit">=</button>
+    <button class="js-clear" name="clear">Clear</button>
+</form>
+
+<div class="result">
+<!-- returned data -->
+</div>
+
+<!-- returned data -->
+<h2>Previous Calculations Performed in This Session</h2>
+
+<!-- GET should refresh and append data below as an unordered list with no bullets, in reverse chronological order -->
+<div class="CalcHistory">
+    <ul class="displayCalcHistory">  <!-- sample data for css styling-->
+        <li>Test data</li>
+        <li>Test data</li>
+        <li>Test data</li>
+        <li>Test data</li>
+    </ul>
+</div>
+</body>
+</html>
+
 <!-- TO DO
 -- enhance 2 input elements
 -- enhance mathematical operator + - * / buttons
@@ -19,45 +51,3 @@
 -- encode display current request result
 -- encode Clear button to empty input fields
 -- display a list of all historical calculations that shows the most recent request and all historical requests with each new submit -->
-
-<!-- user action -->
-<div class="userActions">
-<input class="usernumber" name="input1" placeholder="1st Num" type=number></input>
-
-
-<button class="operator" name="plus">+</button>
-<button class="operator" name="minus">-</button>
-<button class="operator" name="multiply">*</button>
-<button class="operator" name="divide">/</button>
-
-<input class="usernumber" name="input2" placeholder="2nd Num" type=number></input>
-<!-- <button class="js-clear" name="clear">Clear</button> -->
-</div>
-
-<div class="result">
-<button class="js-submit" name="Submit">And the answer is...</button>
-
-
-
-<!-- returned data -->
-<span class="answer">  <!-- current calculation -->
-    32  <!-- sample data for css styling -->
-</span>
-</div>
-
-<!-- returned data -->
-<h2>All Calculations Done This Session</h2>
-
-<!-- GET should refresh and append data below as an unordered list with no bullets, in reverse chronological order -->
-<div class="displayCalcHistory"> 
-    <ul>  <!-- sample data for css styling-->
-        <li>Test data</li>
-        <li>Test data</li>
-        <li>Test data</li>
-        <li>Test data</li>
-
-    </ul>
-</div>
-
-</body>
-</html>
