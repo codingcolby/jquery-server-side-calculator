@@ -22,7 +22,7 @@
 
 <!-- user action -->
 <div class="userActions">
-<input name="input1" placeholder="1st Num" type=number></input>
+<input class="usernumber" name="input1" placeholder="1st Num" type=number></input>
 
 
 <button class="operator" name="plus">+</button>
@@ -30,7 +30,7 @@
 <button class="operator" name="multiply">*</button>
 <button class="operator" name="divide">/</button>
 
-<input name="input2" placeholder="2nd Num" type=number></input>
+<input class="usernumber" name="input2" placeholder="2nd Num" type=number></input>
 <!-- <button class="js-clear" name="clear">Clear</button> -->
 </div>
 
@@ -40,14 +40,16 @@
 
 
 <!-- returned data -->
-<span class="answer">  <!-- current caluclation -->
+<span class="answer">  <!-- current calculation -->
     32  <!-- sample data for css styling -->
 </span>
 </div>
 
 <!-- returned data -->
 <h2>All Calculations Done This Session</h2>
-<div class="displayCalcHistory"> <!-- GET will refresh and append data here as an unordered list with no bullets, in reverse chronological order -->
+
+<!-- GET should refresh and append data below as an unordered list with no bullets, in reverse chronological order -->
+<div class="displayCalcHistory"> 
     <ul>  <!-- sample data for css styling-->
         <li>Test data</li>
         <li>Test data</li>
@@ -56,9 +58,6 @@
 
     </ul>
 </div>
-
-<!--STRETCH DETAILS TO COME - if time permits -->
-
 
 </body>
 </html>

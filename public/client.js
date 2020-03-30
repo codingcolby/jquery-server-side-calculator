@@ -1,9 +1,11 @@
+// REDUCE ALL THE CODE !
+
 $(document).ready(init);
 
 function init() {
-    $('.js-submit').on('click', collectUserInput );
-    $('.userActions').append (`
-    <button class="js-clear" name="clear">Clear</button>`)
+    $('.js-submit').on('click', collectUserInput);
+    // intention: clear button won't appear until after the first instance of the submit button being clicked
+    // $('.userActions').append (`<button class="js-clear" name="clear">Clear</button>`)
     console.log(userInput);
     postUserInput;
 }
@@ -11,11 +13,16 @@ function init() {
 
 // TO DO
 // -- capture 2 input fields
-// -- capture operator selection
-// -- bundle as object
-// -- send object to server via POST
-// -- retrieve computational result via GET
-// -- display all  previous input/calculation results in a list via GET which updates with each new calculation
+// -- capture operator selection ?use buttons and pass the button name?
+// -- send object to server via POST...server logic/communications not ready for this yet
+// -- retrieve computational result via GET...server logic/communications not ready for this yet
+// -- display all previous input/calculation results in a list via GET which updates with each new calculation
+
+$('.js-clear').on('click', clearInput);
+
+function clearInput() {
+    $('.usernumber').val('');
+};
 
 function collectUserInput () {
     event.preventDefault();

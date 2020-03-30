@@ -1,16 +1,14 @@
+// REDUCE ALL THE CODE !
+
 $(document).ready(init);
 
 function init() {
-
-console.log('Hello calcprocessing.js');
+    console.log("The answer is being calculated"); // this should be the response to the POST - research syntax and AJAX
 };
 
-console.log("The answer is being calculated");
-
-
-
 // TO DO
-// create a callable function to process the given inputs with the selected naturalLangOperator
+// create a callable function to process the given inputs with the selected naturalLangOperator due to operator symbol throwing errors during submit tests
+// not all these const may be needed - remove after testing if not
 const input1 = [];
 const naturalLangOperator = [];
 const input2 = [];
@@ -24,7 +22,6 @@ const calcDone = {
     result: '',
     displayOnlyString: '',
     };
-
 
 const newCalc=
     {
@@ -52,9 +49,10 @@ function calcprocessing () {
             operatorSymbol: '+',
             input2: $('input2'),
             result: $('result'),
-            displayOnlyString: {input1 + " " + "/" + " " + input2 +" = " + result]);
-            };
+            displayOnlyString: (`$(input1) + $(input2) = $(result)`),
+            });
         return calcDone;
+
     }
     else if (naturalLangOperator == "minus") {
         let result = (input1 - input2);
@@ -73,7 +71,7 @@ else if (naturalLangOperator == "divide") {
         answer.push(result);
         calcDone.push([input1 + " " + "/" + " " + input2 +" = " + result]);
         return calcDone;
-}   
+}
 else {
     console.log('A result could not be calculated');
 }
@@ -97,16 +95,16 @@ app.post('/calculationhistory', (req, res) => {
 // TESTS
 // calcprocessing(6, 'plus', 2);
 // console.log(`Addition Test Answer: ${answer}`); // should be "Answer: 8"
-// console.log("Addition Operator Test: " + calcuse + " = " + `${answer}`); // should be "6 + 2 = 8"
+// console.log("Addition Operator Test: " + calcDone + " = " + `${answer}`); // should be "6 + 2 = 8"
 
 // calcprocessing(6, 'minus', 2);
 // console.log(`Subtraction Test Answer: ${answer}`);  // should be 4
-// console.log("Subtraction Operator Test: " + calcuse + " = " + `${answer}`); // should be "6 - 2 = 4"
+// console.log("Subtraction Operator Test: " + calcDone + " = " + `${answer}`); // should be "6 - 2 = 4"
 
 // calcprocessing(6, 'multiply', 2);
 // console.log(`Multiplication Test Answer: ${answer}`);  // should be 12
-// console.log("Multiplication Operator Test: " + calcuse + " = " + `${answer}`); //should be "6 * 2 = 12"
+// console.log("Multiplication Operator Test: " + calcDone + " = " + `${answer}`); //should be "6 * 2 = 12"
 
 // calcprocessing(6, 'divide', 2);
 // console.log(`Division Test Answer: ${answer}`); // should be 3
-// console.log("Division Operator Test: " + calcuse + " = " + `${answer}`); // should be "6 / 2 = 3"
+// console.log("Division Operator Test: " + calcDone + " = " + `${answer}`); // should be "6 / 2 = 3"

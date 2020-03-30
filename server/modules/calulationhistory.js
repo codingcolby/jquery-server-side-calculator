@@ -1,5 +1,5 @@
-
-
+// TO DO
+// -- make sure this stores all history; NOTE: it will clear when/if restarting the Server
 
 module.exports = [
 
@@ -9,20 +9,14 @@ module.exports = [
     naturalLangOperator: 'divided',
     input2: 6,
     result: 2,
-    displayOnlyString:  
-}
+    displayOnlyString: `12 / 6 = 2`,
+},
 
 {
     input1: 6,
     naturalLangOperator: 'multiply',
     input2: 3,
     result: 18,
-    displayOnlyString:  
+    displayOnlyString: `6 * 3 = 18`,
 }
 ];
-
-
-
-
-// TO DO
-// -- make sure this stores all history; NOTE: it will clear when/if restarting the Server

@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 //  SERVER ROUTES  //
 // ********** //
 const calculationHistory = require('modules/calculationhistory.js')
-app.get('/calulationhistory', (req, res) => {
+app.get('/calculationhistory', (req, res) => {
     res.send(calculationHistory);
 });
 app.post('/calcprocessing', (req, res) => {

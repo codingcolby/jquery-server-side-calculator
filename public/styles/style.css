@@ -72,12 +72,12 @@ h2 {
     border-bottom: 6px double black;
 }
 
-.displayCalcHistory {    
+.displayCalcHistory {
     text-align: left;
     font-size: large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
-    padding 0 0 0 20px;
+    padding: 0 0 0 20px;
     background-color:coral
 }
 

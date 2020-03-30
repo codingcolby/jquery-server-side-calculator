@@ -36,8 +36,8 @@ const newCalc=
                 displayOnlyString: (input1 + " " + "+" + " " + input2 + " = " + result),
                 });
             return calcDone;
+        }
         else {
             console.log('Nope, try again')
         };
     };
-}
