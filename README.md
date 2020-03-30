@@ -5,7 +5,7 @@
 
 NOTE: this remains a work in progress
 
-This simple calculators accepts two user generated numbers and an operator. These parameters are sent via POST to the server where the calculation occurs. Once completed, the result and an updated history of all calculations performed during the session are displayed to the user. A "Clear" button is available to the user to refresh the input fields for new entries.
+This simple calculators accepts two user generated numbers and an operator. These parameters are sent via POST to the server where the calculation occurs. Once completed, the result of the current calculation and an updated history of all calculations performed during the session are returned to the client and displayed to the user. A "Clear" button is available to the user to refresh the input fields at any time without reloading the page.
 
 More to come...
 
